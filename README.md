@@ -1,16 +1,59 @@
-# food_catalog
+### Struktur Folder
 
-A new Flutter project.
+```
+lib/
+├── main.dart # Entry point aplikasi
+│
+├── core/ # Utilitas & konfigurasi global
+│ ├── routes/ # Routing konfigurasi
+│ │ └── app_router.dart
+│ ├── constants/ # Konstanta aplikasi
+│ │ └── app_constants.dart
+│ └── theme/ # Theme & styling
+│ └── app_theme.dart
+│
+├── features/ # Fitur-fitur aplikasi
+│ └── cart/ # Fitur: Cart/Keranjang
+│ ├── data/ # DATA LAYER
+│ │ ├── models/ # Model data (DTO)
+│ │ │ └── product_model.dart
+│ │ └── repositories/ # Implementasi repository
+│ │ └── cart_repository_impl.dart
+│ │
+│ ├── domain/ # DOMAIN LAYER
+│ │ ├── entities/ # Entity / objek bisnis murni
+│ │ │ └── product.dart
+│ │ └── repositories/ # Kontrak (abstract) repository
+│ │ └── cart_repository.dart
+│ │
+│ └── presentation/ # PRESENTATION LAYER
+│ ├── providers/ # Provider / State Notifier
+│ │ └── cart_provider.dart
+│ ├── pages/ # Halaman aplikasi
+│ │ ├── catalog_page.dart
+│ │ └── cart_page.dart
+│ └── widgets/ # Widget komponen kecil
+│ └── add_button_widget.dart
+│
+└── injection.dart # Dependency Injection setup
+```
 
-## Getting Started
+### Flow Saat User Tekan “TAMBAH”
 
-This project is a starting point for a Flutter application.
+Behind The Scene:
 
-A few resources to get you started if this is your first Flutter project:
+1. User tekan TAMBAH.
+2. Tombol itu manggil provider.addItem().
+3. Provider minta repository buat nambahin item ke data.
+4. Data berhasil diperbarui.
+5. Provider panggil notifyListeners().
+6. UI dapat sinyal ada perubahan.
+7. UI render ulang.
+8. Cart sekarang bertambah satu item.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Tampilan Aplikasi
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1b2ff536-d0ff-45b2-bfd9-b50cad2c47ac" width="300"/>
+  <img src="https://github.com/user-attachments/assets/53a546ad-3e26-460a-b255-35d3993e23b2" width="300"/>
+</p>
