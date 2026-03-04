@@ -54,6 +54,6 @@ Behind The Scene:
 ### Tampilan Aplikasi
 
 <p align="center">
-  <img src="" width="300"/>
-  <img src="" width="300"/>
+  <img src="https://github.com/user-attachments/assets/1b2ff536-d0ff-45b2-bfd9-b50cad2c47ac" width="300"/>
+  <img src="https://github.com/user-attachments/assets/53a546ad-3e26-460a-b255-35d3993e23b2" width="300"/>
 </p>
